@@ -26,7 +26,7 @@ class WechatMoment():
 
     def findUserMoments(self, user_id):
         search_button = self.wait.until(EC.element_to_be_clickable((By.ID, 'com.tencent.mm:id/f8y')))
-        time.sleep(10)
+        time.sleep(1)
         search_button.click()
         print('点击搜索框...')
 
@@ -56,8 +56,10 @@ class WechatMoment():
         self.driver.swipe(300,800,300,300,15000)
         print('swipe end')
         print(len(items))
+        print(items)
         for item in items:
-            moment_text=item.find_element_by_id('com.tencent.mm:id/b__').text
+            print(item)
+            moment_text=item.find_element_by_id('com.tencent.mm:id/b_l').text
             print(moment_text)
 
 def main():
